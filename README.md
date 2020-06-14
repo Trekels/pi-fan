@@ -11,7 +11,7 @@ price and hackability.
 
 ### Setup
 
-This script makes use of (pigpio)[https://github.com/fivdi/pigpio], so we need to install the pigpio C library.
+This script makes use of [pigpio](https://github.com/fivdi/pigpio), so we need to install the pigpio C library.
 For more details on the lib check the previous link!
 
 ```bash
