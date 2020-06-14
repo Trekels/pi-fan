@@ -1,0 +1,14 @@
+{
+  "name": "pi-fan",
+  "license": "ISC",
+  "version": "0.0.1",
+  "description": "Small program to control raspberry pi fanspeed",
+  "author": "Trekels Vincent",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "pigpio": "^3.2.3"
+  }
+}
