@@ -6,9 +6,10 @@
   "author": "Trekels Vincent",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./src/index.js -h"
   },
   "dependencies": {
-    "pigpio": "^3.2.3"
+    "pigpio": "^3.2.3",
+    "yargs": "^15.3.1"
   }
 }
