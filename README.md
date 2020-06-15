@@ -27,8 +27,13 @@ npm install
 
 ### Usage
 
+```bash
+node ./src/index.js --fanPin 17 -dutyCycleOffset 75 -tempTreshold 40 -criticalTempTreshold 80
+```
+
 **fanPin (required)**
-The Gpio control pin the fan is connected to. **!Note** that it is the GPIO pin not the physical one `GPIO 17 === pin 11`.
+The Gpio control pin the fan is connected to.
+**!Note** that it is the GPIO pin not the physical one `GPIO 17 -> pin 11`.
 
 **dutyCycleOffset (required)**
 Offset for the pulse width sins chances are the fan wont start turining at a pulse width of 1.
@@ -43,14 +48,10 @@ step 80 which is equal to `0,047 * 80 =  3,76V` causing the fan to spin at a low
 This is the treshold that needs to be surpassed in orde for the script to trigger the fan temperture below this is considered 
 `ok` withoud additional cooling. As for the raspberry a good temperature is usually below 40 hence the default.
 
-**criticalTempTreshold (defaul 80)**
+**criticalTempTreshold (default 80)**
 
 Critical treshold is the end of the temperatur range over which we will spread the pwm steps. At this temperature the fan must
 be running at max rate to control temperature. 
-
-```bash
-node ./src/index.js --fanPin 17 -dutyCycleOffset 75 -tempTreshold 40 -criticalTempTreshold 80
-```
 
 And to start the script simply run `node start`, you might have to `sudo node start` because pigpio root/sudo privileges to
 access hardware peripherals.
