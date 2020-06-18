@@ -48,7 +48,7 @@ setInterval(() => {
 
 // Ensure the pin is set ot 0 if the scripts exits 
 function exitHandler() {
-  fan.digitalWrite(0);
+  fanControl.stopFan();
   process.exit();
 }
 

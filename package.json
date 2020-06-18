@@ -6,7 +6,7 @@
   "author": "Trekels Vincent",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js -p 24 -o 75"
+    "start": "node ./src/index.js -p 23 -o 75"
   },
   "dependencies": {
     "pigpio": "^3.2.3",

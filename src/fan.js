@@ -1,10 +1,14 @@
-// const Gpio = require('pigpio').Gpio;
+const Gpio = require('pigpio').Gpio;
 
 exports.init = config => {
 
   let activeFanSpeed = null;
   const fan = new Gpio(config.fanPin, {mode: Gpio.OUTPUT});
   const { tempTreshold, criticalTempTreshold, dutyCycleOffset } = config;
+
+  const stopFan = () => {
+    fan.digitalWrite(0);
+  };
 
   // Keep the current dutyCycle in memory to check against changes in speed.
   // If it is a state change from 0 to ... or ... to 0 we delay it by a measure cycle to reduce racing.
@@ -36,5 +40,5 @@ exports.init = config => {
     return temp >= criticalTempTreshold ? 255 : Math.round(((temp - tempTreshold) * 4.62) + dutyCycleOffset);
   }
 
-  return { setFanSpeed, calcFanSpeed };
+  return { setFanSpeed, calcFanSpeed, stopFan };
 }
