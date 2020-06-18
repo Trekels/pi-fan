@@ -21,7 +21,7 @@ const args = require('yargs')
     description: 'Start fan above this temp',
   })
   .option('criticalTempTreshold', {
-    alias: 't',
+    alias: 'c',
     type: 'number',
     default: 80,
     description: 'Critical temp level',
@@ -38,17 +38,17 @@ const fanControl = require('./fan').init({
   criticalTempTreshold: args.criticalTempTreshold,
 });
 
-// setInterval(() => {
-//   fanControl.setFanSpeed(
-//     fanControl.calcFanSpeed(
-//       temperature.read()
-//     )
-//   );
-// }, 500);
+setInterval(() => {
+  fanControl.setFanSpeed(
+    fanControl.calcFanSpeed(
+      temperature.read()
+    )
+  );
+}, 1500);
 
 // Ensure the pin is set ot 0 if the scripts exits 
 function exitHandler() {
-  // fan.digitalWrite(0);
+  fan.digitalWrite(0);
   process.exit();
 }
 
