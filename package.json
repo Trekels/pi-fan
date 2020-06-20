@@ -1,15 +1,27 @@
 {
   "name": "pi-fan",
-  "license": "ISC",
+  "license": "MIT",
+  "private": false,
   "version": "0.0.1",
   "description": "Small program to control raspberry pi fanspeed",
   "author": "Trekels Vincent",
-  "main": "index.js",
+  "main": "./src/index.js",
+  "engines": {
+    "node": ">=11.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Trekels/pi-fan"
+  },
+  "keywords": ["rasberrypi", "fan-control", "pi", "nodejs", "cli"],
   "scripts": {
     "start": "node ./src/index.js -p 23 -o 75"
   },
   "dependencies": {
     "pigpio": "^3.2.3",
     "yargs": "^15.3.1"
+  },
+  "bin": {
+    "pi-fan": "./bin/pi-fan"
   }
 }

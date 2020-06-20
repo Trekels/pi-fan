@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const args = require('yargs')
   .usage('Usage: $0 --fanPin 17 -dutyCycleOffset 75 -tempTreshold 40 -criticalTempTreshold 80')
   .option('fanPin', {
