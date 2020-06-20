@@ -2,7 +2,7 @@
   "name": "pi-fan",
   "license": "MIT",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Small program to control raspberry pi fanspeed",
   "author": "Trekels Vincent",
   "main": "./src/index.js",
@@ -22,6 +22,6 @@
     "yargs": "^15.3.1"
   },
   "bin": {
-    "pi-fan": "./bin/pi-fan"
+    "pi-fan": "./bin/pi-fan.js"
   }
 }
